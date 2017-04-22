@@ -25,7 +25,7 @@ var Main = (props) => {
 							<p class="range-field">
       						<input type="range" id="test5" min="0" max="100" />
     						</p>
-							<button className="button"> Save </button>
+							<button className="button"> Saved </button>
   						</form>
 					</div>	
 				</div>
