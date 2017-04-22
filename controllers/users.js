@@ -3,11 +3,11 @@
 var User = require("../models/User");
 
 module.exports = {
-  get: function(data, cb) {
-    User.find({
-      _id: data._id
-    }, cb);
-  },
+  // get: function(data, cb) {
+  //   User.find({
+  //     _id: data._id
+  //   }, cb);
+  // },
   save: function(data, cb) {
     var newUser = {
       userName: data.userName,
@@ -33,9 +33,9 @@ module.exports = {
       }
     });
   },
-  delete: function(data, cb) {
-    User.remove({
-      _id: data._id
-    }, cb);
-  }
+  // delete: function(data, cb) {
+  //   User.remove({
+  //     _id: data._id
+  //   }, cb);
+  // }
 };
