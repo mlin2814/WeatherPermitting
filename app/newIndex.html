@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Permitting</title>
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="sliderWeather.js"></script>
+</head>
+<body>
+
+<h2 align="center">Weather Permitting</h2>
+<h4 align="center">Let us let you know how to prepare for the weather!</h4>
+<p>
+  <label for="hot">Hot: We recommend light clothing (Tank Top, Shorts):</label>
+  <input type="text" id="hot" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+<div id="slider-range-hot"></div>
+<input type="submit" data-inline="true" value="Submit">
+
+
+<p>
+  <label for="warm">Warm: We recommend light clothing (T-Shirt, Shorts)</label>
+  <input type="text" id="warm" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+<div id="slider-range-warm"></div>
+<input type="submit" data-inline="true" value="Submit">
+
+<p>
+  <label for="cool">Cool: We recommend moderate clothing (hoodie, light jacket)</label>
+  <input type="text" id="cool" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+<div id="slider-range-cool"></div>
+<input type="submit" data-inline="true" value="Submit">
+
+<p>
+  <label for="cold">Cold: We recommend heavy clothing (Winter Jacket, Snow Pants)</label>
+  <input type="text" id="cold" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+<div id="slider-range-cold"></div>
+<input type="submit" data-inline="true" value="Submit">
+ 
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+    <h1>Weather Permitting</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="/action_page_post.php">
+      <div data-role="rangeslider">
+        <label for="temp-hot-min">Hot:(Tank Top, Shorts)</label>
+        <input type="range" name="temp-hot-min" id="temp-hot-min" value="85" min="0" max="120">
+        <label for="temp-hot-max">Hot:</label>
+        <input type="range" name="temp-hot-max" id="temp-hot-max" value="98" min="0" max="120">
+      </div>
+        <input type="submit" data-inline="true" value="Submit">
+      <div data-role="rangeslider">
+        <label for="temp-warm-min">Warm: We recommend light clothing (T-Shirt, Shorts)</label>
+        <input type="range" name="temp-warm-min" id="temp-warm-min" value="67" min="0" max="120">
+        <label for="temp-warm-max">Hot:</label>
+        <input type="range" name="temp-warm-max" id="temp-warm-max" value="82" min="0" max="120">
+      </div>
+        <input type="submit" data-inline="true" value="Submit">
+      <div data-role="rangeslider">
+        <label for="temp-cool-min">Cool: We recommend moderate clothing (hoodie, light jacket)</label>
+        <input type="range" name="temp-cool-min" id="temp-cool-min" value="85" min="0" max="120">
+        <label for="temp-cool-max">Hot:</label>
+        <input type="range" name="temp-cool-max" id="temp-cool-max" value="98" min="0" max="120">
+      </div>
+        <input type="submit" data-inline="true" value="Submit">
+      <div data-role="rangeslider">
+        <label for="temp-cold-min">Cold: We recommend heavy clothing (Winter Jacket, Snow Pants)</label>
+        <input type="range" name="temp-cold-min" id="temp-cold-min" value="85" min="0" max="120">
+        <label for="temp-cold-max">Hot:</label>
+        <input type="range" name="temp-cold-max" id="temp-cold-max" value="98" min="0" max="120">
+      </div>
+        <input type="submit" data-inline="true" value="Submit">
+     </form>
+  </div>
+</div> 
+
+</body>
+</html>
+ -->
