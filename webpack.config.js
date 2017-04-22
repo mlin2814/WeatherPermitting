@@ -31,9 +31,7 @@ module.exports = {
 			Message: 'app/components/Message.jsx',
 			openWeatherMap: 'app/api/openWeatherMap.jsx',
 			ErrorModal: 'app/components/ErrorModal.jsx',
-			Slider: 'app/components/nouislider.js',
-			applicationStyles: 'app/css/style.scss',
-			sliderStyle: 'app/css/nouislider.css'
+			applicationStyles: 'app/css/style.scss'
 		},
 		extensions: ['', '.js', '.jsx']
 	},
