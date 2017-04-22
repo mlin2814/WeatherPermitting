@@ -3,7 +3,6 @@ var Form = require('Form');
 var Message = require('Message');
 var openWeatherMap = require('openWeatherMap');
 var ErrorModal = require('ErrorModal');
-var Slider = require('Slider');
 
 var Weather = React.createClass({
 	getInitialState: function() {
@@ -55,28 +54,7 @@ var Weather = React.createClass({
 
 		return(
 			<div>
-				<h1 className="text-center page-title">Weather Permitting</h1>	
-				<form action="hot">
-				    <p class="range-field">
-				    <input type="range" id="test5" min="0" max="120" />
-				  </p>
-				</form>
-				<form action="warm">
-				    <p class="range-field">
-				    <input type="range" id="test5" min="0" max="120" />
-				  </p>
-				</form>
-				<form action="cool">
-				    <p class="range-field">
-				    <input type="range" id="test5" min="0" max="120" />
-				  </p>
-				</form>
-				<form action="cold">
-				    <p class="range-field">
-				    <input type="range" id="test5" min="0" max="120" />
-				  </p>
-				</form>
-
+				<h1 className="text-center page-title">Show me the Weather!</h1>	
 				<Form onSearch={this.handleSearch}/>
 				{renderMessage()}
 				{renderError()}
