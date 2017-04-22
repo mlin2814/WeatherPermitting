@@ -16,32 +16,46 @@ var userSchema = new Schema({
   },
   // phone number, a number, must be entered
   phoneNumber: {
-    type: Number,
+    type: String,
     required: true,
-    unique: true,
-    max: 10
+    unique: true
   },
   // zip code, a number, must be entered
   zipCode: {
-    type: Number,
-    required: true,
-    max: 5
+    type: String,
+    required: true
   },
   
   // preferences
-  cold: {
+  coldMin: {
     type: Number,
     required: true,
   },
-  cool: {
+  coldMax: {
     type: Number,
     required: true,
   },
-  warm: {
+  coolMin: {
     type: Number,
     required: true,
   },
-  hot: {
+  coolMax: {
+    type: Number,
+    required: true,
+  },
+  warmMin: {
+    type: Number,
+    required: true,
+  },
+  warmMax: {
+    type: Number,
+    required: true,
+  },
+  hotMin: {
+    type: Number,
+    required: true,
+  },
+  hotMax: {
     type: Number,
     required: true,
   }
