@@ -43,15 +43,22 @@ app.listen(PORT, function () {
 
 // Twilio routes
 
-var rule = new schedule.RecurrenceRule();
-rule.minute = 11;
+// var rule = new schedule.RecurrenceRule();
+// rule.minute = 11;
 
-var sendText = schedule.scheduleJob(rule, function(){
-client.messages.create({
-    to: '17327251503',
-    from: '17326075111',
-    body: 'this is working',
-  }, function (err, message) {
-      console.log(message.sid);
-  });
+db.collection.find({'_id':o_id}, function(err, cursor){
+    var data = cursor.toArray(callback);
+    console.log(data);
+    db.close();
 });
+
+
+// var sendText = schedule.scheduleJob(rule, function(){
+// client.messages.create({
+//     to: '17327251503',
+//     from: '17326075111',
+//     body: 'this is working',
+//   }, function (err, message) {
+//       console.log(message.sid);
+//   });
+// });
