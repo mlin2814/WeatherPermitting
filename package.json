@@ -23,9 +23,12 @@
     "babel": "^6.5.2",
     "babel-core": "^6.21.0",
     "express": "^4.14.0",
+    "mongoose": "^4.9.5",
+    "node-schedule": "^1.2.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",
+    "twilio": "^2.11.1",
     "webpack": "^1.14.0"
   },
   "devDependencies": {
