@@ -12,13 +12,24 @@
 
 <h2 align="center">Weather Permitting</h2>
 <h4 align="center">Let us let you know how to prepare for the weather!</h4>
+
+<form action="/action_page.php">
+  Name:<br>
+  <input type="text" name="name"><br>
+  Phone:<br>
+  <input type="text" name="phone"><br>
+  Zip Code:<br>
+  <input type="text" name="location"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<div>
 <p>
   <label for="hot">Hot: We recommend light clothing (Tank Top, Shorts):</label>
   <input type="text" id="hot" readonly style="border:0; color:#f6931f; font-weight:bold;">
 </p>
 <div id="slider-range-hot"></div>
 <input type="submit" data-inline="true" value="Submit">
-
 
 <p>
   <label for="warm">Warm: We recommend light clothing (T-Shirt, Shorts)</label>
@@ -40,6 +51,9 @@
 </p>
 <div id="slider-range-cold"></div>
 <input type="submit" data-inline="true" value="Submit">
+</div>
+
+
  
 </body>
 </html>
