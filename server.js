@@ -15,7 +15,7 @@ var authToken = '';   // Your Auth Token from www.twilio.com/console
 
 // Set up Express with Body Parser
 var app = express();
-var router = express.Router();
+// var router = express.Router();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
@@ -54,8 +54,8 @@ var User = require('./models/User.js');
 app.use(express.static(process.cwd() + '/public'));
 
 // Insert new User into MongoDB
-router.post('/add', function(req, res){
-
+app.post('/add', function(req, res){
+  console.log(req);
   // Get values from body
   var userName = req.body.userName;
   var phoneNumber = req.body.phoneNumber;
@@ -90,11 +90,12 @@ router.post('/add', function(req, res){
   entry.save(function(err, doc) {
     // log any errors
     if (err) {
-      console.log(err);
+    res.sendStatus(403);    
     } 
     // or log the doc that was saved to the DB
     else {
-      console.log(doc);
+      console.log();
+      res.sendStatus(200);
     }
   });
 

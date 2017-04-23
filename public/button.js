@@ -25,7 +25,11 @@ $("#submit").on('click', function(event) {
   console.log(zipCode);
   console.log(hot);
 
-  var data = {
+  // AJAX Call to send data to post route
+   $.ajax({
+     url: '/add',
+     type: 'POST',
+     body: {
         userName: userName,
         phoneNumber: phoneNumber,
         zipCode: zipCode,
@@ -37,20 +41,10 @@ $("#submit").on('click', function(event) {
         warmMax: warmMax,
         hotMin: hotMin,
         hotMax: hotMax
-      }
-      
-  console.log(data);
-
-  // AJAX Call to send data to post route
-   $.ajax({
-     url: '/add',
-     type: 'POST',
-     data: JSON.stringify(data)
+     }
    })
    .done(function() {
      // Refresh the Window after the call is done
      console.log('got it');
    });
-
-   return false;
 });
