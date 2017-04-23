@@ -82,6 +82,8 @@ app.post('/add', function(req, res){
     hotMin: hotMin,
     hotMax: hotMax
   };
+  console.log(newUser);
+  console.log(coldMax);
 
   // Using the User model, create a new MongoDB entry
   var entry = new User (newUser);
@@ -90,7 +92,8 @@ app.post('/add', function(req, res){
   entry.save(function(err, doc) {
     // log any errors
     if (err) {
-    res.sendStatus(403);    
+    res.sendStatus(403);
+    console.log(err);
     } 
     // or log the doc that was saved to the DB
     else {
@@ -117,7 +120,7 @@ app.listen(port, function(){
 // Cron Job to Pull from Mongo every day at 7am and text all users
 // ---------------------------------------------------------------------------------------------------------------
 var rule = new schedule.RecurrenceRule();
-rule.minute = 0; // <-- for testing (every hour instead)
+rule.minute = 18; // <-- for testing (every hour instead)
 // rule.hour = 7; // <-- actually 7am 
 var j = schedule.scheduleJob(rule, function(){
 
