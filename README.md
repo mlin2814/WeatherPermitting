@@ -32,7 +32,7 @@ If you wish to clone the app down to your local machine...
 ![Main](screenshots/homepage.png)
 
 ### Form in used
-![Openmain](screenshots/usehomepage.png)
+![Openmain](screenshots/use_homepage.png)
 
 ### Code
 ![code1](screenshots/code1.png)
