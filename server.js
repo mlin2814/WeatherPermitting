@@ -11,8 +11,8 @@ var test = null;
 
 
 // Twilio Account
-var accountSid = ''; // Your Account SID from www.twilio.com/console
-var authToken = '';   // Your Auth Token from www.twilio.com/console
+var accountSid = 'AC023f30be60ca8348503d270f8e18f49a'; // Your Account SID from www.twilio.com/console
+var authToken = '3cc1ce0e4a0acbb28812581b2be10a98';   // Your Auth Token from www.twilio.com/console
 
 
 
@@ -56,8 +56,11 @@ var User = require('./models/User.js');
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + '/public'));
 
+var zipCode;
+
 // Insert new User into MongoDB
 app.post('/add', function(req, res){
+  console.log(req.body);
 
   // Get values from body
   var userName = req.body.userName;
@@ -93,7 +96,9 @@ app.post('/add', function(req, res){
   entry.save(function(err, doc) {
     // log any errors
     if (err) {
-    res.sendStatus(403);    
+    // res.sendStatus(403);
+    console.log(err);
+    console.log("this is an error");
     } 
     // or log the doc that was saved to the DB
     else {
