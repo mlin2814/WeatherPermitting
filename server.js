@@ -125,8 +125,11 @@ app.listen(port, function(){
 // Cron Job to Pull from Mongo every day at 7am and text all users
 // ---------------------------------------------------------------------------------------------------------------
 var rule = new schedule.RecurrenceRule();
-// rule.minute = 36; // <-- for testing (every hour instead)
-rule.hour = 6; // <-- actually 7am 
+rule.minute = 0; // <-- for testing (every hour instead)
+rule.minute = 15; // <-- for testing (every hour instead)
+rule.minute = 30; // <-- for testing (every hour instead)
+rule.minute = 45; // <-- for testing (every hour instead)
+// rule.hour = 7; // <-- actually 7am 
 var j = schedule.scheduleJob(rule, function(){
 
   // Query MongoDB for all users
