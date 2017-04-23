@@ -1,6 +1,6 @@
 $("#submit").on('click', function(event) {
 
-  var userName = $( "#name" ).val().trim();
+  var userName = $( "#name" ).val();
   var phoneNumber = $( "#phone" ).val();
   var zipCode = $( "#location" ).val();
 
@@ -20,11 +20,16 @@ $("#submit").on('click', function(event) {
   var coldMin = cold[0];
   var coldMax = cold[2];
 
+  console.log(userName);
+  console.log(phoneNumber);
+  console.log(zipCode);
+  console.log(hot);
+
   // AJAX Call to send data to post route
    $.ajax({
      url: '/add',
      type: 'POST',
-     body: {
+     data: {
         userName: userName,
         phoneNumber: phoneNumber,
         zipCode: zipCode,
