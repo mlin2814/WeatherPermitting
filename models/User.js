@@ -16,9 +16,9 @@ var userSchema = new Schema({
   },
   // phone number, a number, must be entered
   phoneNumber: {
-    type: String,
+    type: Number,
     required: true,
-    unique: true
+    unique: false
   },
   // zip code, a number, must be entered
   zipCode: {
@@ -29,7 +29,7 @@ var userSchema = new Schema({
   // preferences
   coldMin: {
     type: Number,
-    required: true,
+    required: true
   },
   coldMax: {
     type: Number,

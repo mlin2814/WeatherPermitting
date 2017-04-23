@@ -56,8 +56,11 @@ var User = require('./models/User.js');
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + '/public'));
 
+var zipCode;
+
 // Insert new User into MongoDB
 app.post('/add', function(req, res){
+  console.log(req.body);
 
   // Get values from body
   var userName = req.body.userName;
@@ -93,7 +96,9 @@ app.post('/add', function(req, res){
   entry.save(function(err, doc) {
     // log any errors
     if (err) {
-    res.sendStatus(403);    
+    // res.sendStatus(403);
+    console.log(err);
+    console.log("this is an error");
     } 
     // or log the doc that was saved to the DB
     else {
