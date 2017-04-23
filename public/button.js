@@ -6,26 +6,26 @@ $("#submit").on('click', function(event) {
 
   var hot = $( "#hot" ).val().split(" ");
   var hotMin = hot[0];
-  var hotMax = hot[2];
+  var hotMax = hot[3];
   console.log(hot);
   console.log(hotMax);
 
   var warm = $( "#warm" ).val().split(" ");
   var warmMin = warm[0];
-  var warmMax = warm[2];
+  var warmMax = warm[3];
   console.log(warm);
   console.log(warmMax);
 
   var cool = $( "#cool" ).val().split(" ");
   var coolMin = cool[0];
-  var coolMax = cool[2];
+  var coolMax = cool[3];
   console.log(cool);
   console.log(coolMax);
 
 
   var cold = $( "#cold" ).val().split(" ");
   var coldMin = cold[0];
-  var coldMax = cold[2];
+  var coldMax = cold[3];
   console.log(cold);
   console.log(coldMax);
 
