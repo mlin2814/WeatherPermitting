@@ -11,8 +11,8 @@ var test = null;
 
 
 // Twilio Account
-var accountSid = 'AC023f30be60ca8348503d270f8e18f49a'; // Your Account SID from www.twilio.com/console
-var authToken = '3cc1ce0e4a0acbb28812581b2be10a98';   // Your Auth Token from www.twilio.com/console
+var accountSid = ''; // Your Account SID from www.twilio.com/console
+var authToken = '';   // Your Auth Token from www.twilio.com/console
 
 
 
