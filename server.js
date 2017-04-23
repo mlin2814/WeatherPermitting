@@ -11,8 +11,8 @@ var test = null;
 
 
 // Twilio Account
-var accountSid = ''; // Your Account SID from www.twilio.com/console
-var authToken = '';   // Your Auth Token from www.twilio.com/console
+var accountSid = process.env.TWILLIO_SID; // Your Account SID from www.twilio.com/console
+var authToken = process.env.TWILLIO_TOKEN;   // Your Auth Token from www.twilio.com/console
 
 
 
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // ---------------------------------------------------------------------------------------------------------------
 // Connect to localhost if not a production environment
 if(process.env.NODE_ENV == 'production'){
-  mongoose.connect('');
+  mongoose.connect(process.env.MONGODB_URI);
 }
 else{
   mongoose.connect('mongodb://localhost/weatherdb');
@@ -189,7 +189,7 @@ var j = schedule.scheduleJob(rule, function(){
         client.messages.create({
             body: totalMessage,
             to: "+1" + temp.phoneNumber,  // Text this number
-            from: '' // From a valid Twilio number
+            from: process.env.TWILLIO_NUMBER // From a valid Twilio number
         }, function(err, message) {
             if (err) {
               console.log(err);
