@@ -55,7 +55,7 @@ app.use(express.static(process.cwd() + '/public'));
 
 // Insert new User into MongoDB
 app.post('/add', function(req, res){
-  console.log(req);
+
   // Get values from body
   var userName = req.body.userName;
   var phoneNumber = req.body.phoneNumber;

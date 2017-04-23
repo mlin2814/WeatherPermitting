@@ -29,7 +29,7 @@ $("#submit").on('click', function(event) {
    $.ajax({
      url: '/add',
      type: 'POST',
-     body: {
+     data: {
         userName: userName,
         phoneNumber: phoneNumber,
         zipCode: zipCode,
