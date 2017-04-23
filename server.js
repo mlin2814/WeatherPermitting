@@ -4,12 +4,15 @@ var bodyParser = require('body-parser');
 var twilio = require('twilio');
 var mongoose = require("mongoose");
 var schedule = require('node-schedule');
+var nodeFetch = require('node-fetch');
+var axios = require('axios');
 
+var test = null;
 
 
 // Twilio Account
-var accountSid = ''; // Your Account SID from www.twilio.com/console
-var authToken = '';   // Your Auth Token from www.twilio.com/console
+var accountSid = 'AC023f30be60ca8348503d270f8e18f49a'; // Your Account SID from www.twilio.com/console
+var authToken = '3cc1ce0e4a0acbb28812581b2be10a98';   // Your Auth Token from www.twilio.com/console
 
 
 
@@ -120,7 +123,7 @@ app.listen(port, function(){
 // Cron Job to Pull from Mongo every day at 7am and text all users
 // ---------------------------------------------------------------------------------------------------------------
 var rule = new schedule.RecurrenceRule();
-rule.minute = 18; // <-- for testing (every hour instead)
+rule.minute = 15; // <-- for testing (every hour instead)
 // rule.hour = 7; // <-- actually 7am 
 var j = schedule.scheduleJob(rule, function(){
 
@@ -138,19 +141,61 @@ var j = schedule.scheduleJob(rule, function(){
       for (var i=0; i < doc.length; i++) {
 
         // Create Custom Message
-        var userMessage = "Hello, " + doc[i].userName + "!";
+        var temp = doc[i];
 
-        // Send Text Message To Current User
+        axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?zip=08817&appid=5f58db0e4ad04143b4e102603285e194&cnt=1&units=imperial')
+        .then(function(res) {
+            console.log(temp);
+            return res.data;
+        }).then(function(json) {
+            console.log(json);
+            var userMessage = "hello";
+            var weatherMessage = "";
+            if (temp.hotMin <= json.list[0].temp.max && json.list[0].temp.max <= temp.hotMax) {
+              userMessage = "Today's high is " + json.list[0].temp.max + ". Recommend light clothing for the heat.";
+              //return userMessage;
+            } else if (temp.warmMin <= json.list[0].temp.max && json.list[0].temp.max <= temp.warmMax){
+              userMessage = "Today's high is " + json.list[0].temp.max + ". Recommend light clothing for the mild heat.";
+              //return userMessage;
+            } else if (temp.coolMin <= json.list[0].temp.max && json.list[0].temp.max <= temp.coolMax){
+              userMessage = "Today's high is " + json.list[0].temp.max + ". Recommend moderate clothing for the cool weather.";
+              //return userMessage;
+            } else if (temp.coldMin <= json.list[0].temp.max && json.list[0].temp.max <= temp.coldMax){
+              userMessage = "Today's high is " + json.list[0].temp.max + ". Recommend heavy clothing for the frigid weather.";
+              //return userMessage;
+            }
+            if (json.list[0].weather[0].main == "Rain") {
+              weatherMessage = " Today will rain. Bring umbrella/rainjacket/rain boots.";
+              //return weatherMessage;
+            } else if (json.list[0].weather[0].main == "Snow") {
+              weatherMessage = " Today will snow. Dress warm and wear boots.";
+               // return weatherMessage;
+            }
+            
+            var newMess = userMessage + weatherMessage;
+            return newMess;
+        }).then(function(newMess){
+          var message = "Hello, " + temp.userName + "! " 
+          var totalMessage = message + newMess;
+          console.log(message + newMess);
+          return totalMessage;
+        }).then(function(totalMessage){
+          // Send Text Message To Current User
         var client = new twilio.RestClient(accountSid, authToken);
         client.messages.create({
-            body: userMessage,
-            to: "+1" + doc[i].phoneNumber,  // Text this number
-            from: '' // From a valid Twilio number
+            body: totalMessage,
+            to: "+1" + temp.phoneNumber,  // Text this number
+            from: '+17325322089' // From a valid Twilio number
         }, function(err, message) {
             if (err) {
               console.log(err);
             }
         });
+        })
+
+        
+
+        
 
       }
       

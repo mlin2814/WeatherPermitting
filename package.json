@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/mlin2814/reactpractice#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "body-parser": "^1.17.1",
     "express": "^4.14.0",
     "mongoose": "^4.9.5",
+    "morgan": "^1.8.1",
+    "node-fetch": "^1.6.3",
     "node-schedule": "^1.2.1",
     "twilio": "^2.11.1"
   }
