@@ -3,7 +3,7 @@ $( function() {
     range: true,
     min: 0,
     max: 120,
-    values: [ 85, 95 ],
+    values: [ 85, 100 ],
     slide: function( event, ui ) {
       $( "#hot" ).val(ui.values[ 0 ] + " degrees - " + ui.values[ 1 ] + " degrees");
     }
@@ -16,7 +16,7 @@ $( function() {
     range: true,
     min: 0,
     max: 120,
-    values: [ 65, 75 ],
+    values: [ 65, 84 ],
     slide: function( event, ui ) {
       $( "#warm" ).val(ui.values[ 0 ] + " degrees - " + ui.values[ 1 ] + " degrees");
     }
@@ -29,7 +29,7 @@ $( function() {
     range: true,
     min: 0,
     max: 120,
-    values: [ 45, 55 ],
+    values: [ 45, 64 ],
     slide: function( event, ui ) {
       $( "#cool" ).val(ui.values[ 0 ] + " degrees - " + ui.values[ 1 ] + " degrees");
     }
@@ -42,7 +42,7 @@ $( function() {
     range: true,
     min: 0,
     max: 120,
-    values: [ 22, 32 ],
+    values: [ 22, 44 ],
     slide: function( event, ui ) {
       $( "#cold" ).val(ui.values[ 0 ] + " degrees - " + ui.values[ 1 ] + " degrees");
     }

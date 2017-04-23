@@ -120,9 +120,8 @@ app.listen(port, function(){
 // Cron Job to Pull from Mongo every day at 7am and text all users
 // ---------------------------------------------------------------------------------------------------------------
 var rule = new schedule.RecurrenceRule();
-rule.minute = 15; // <-- for testing (every hour instead)
-rule.minute = 0; // <-- for testing (every hour instead)
-// rule.hour = 7; // <-- actually 7am 
+// rule.minute = 36; // <-- for testing (every hour instead)
+rule.hour = 6; // <-- actually 7am 
 var j = schedule.scheduleJob(rule, function(){
 
   // Query MongoDB for all users
@@ -140,14 +139,14 @@ var j = schedule.scheduleJob(rule, function(){
 
         // Create Custom Message
         var temp = doc[i];
-
-        axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?zip=08817&appid=5f58db0e4ad04143b4e102603285e194&cnt=1&units=imperial')
+        var zipUser = temp.zipCode;
+        axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?zip=' + zipUser + '&appid=5f58db0e4ad04143b4e102603285e194&cnt=1&units=imperial')
         .then(function(res) {
             console.log(temp);
             return res.data;
         }).then(function(json) {
             console.log(json);
-            var userMessage = "hello";
+            var userMessage = "";
             var weatherMessage = "";
             if (temp.hotMin <= json.list[0].temp.max && json.list[0].temp.max <= temp.hotMax) {
               userMessage = "Today's high is " + json.list[0].temp.max + ". Recommend light clothing for the heat.";
@@ -171,11 +170,13 @@ var j = schedule.scheduleJob(rule, function(){
             }
             
             var newMess = userMessage + weatherMessage;
+            console.log(newMess, " new mess")
             return newMess;
         }).then(function(newMess){
           var message = "Hello, " + temp.userName + "! " 
           var totalMessage = message + newMess;
           console.log(message + newMess);
+          console.log(totalMessage);
           return totalMessage;
         }).then(function(totalMessage){
           // Send Text Message To Current User
@@ -190,6 +191,11 @@ var j = schedule.scheduleJob(rule, function(){
             }
         });
         })
+
+        
+
+        
+
       }
       
     }
