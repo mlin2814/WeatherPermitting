@@ -4,27 +4,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Weather Permitting</title>
   <link rel="stylesheet" href="jquery-ui.css">
+  <link rel="stylesheet" href="./style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="/sliderWeather.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>-->
 </head>
 <body>
-
+<!--
 <h2 align="center">Weather Permitting</h2>
-<h4 align="center">Let us let you know how to prepare for the weather!</h4>
+<h4 align="center">Let us let you know how to prepare for the weather!</h4>-->
 
-<form>
-  Name:<br>
-  <input type="text" name="name" id="name"><br>
-  Phone:<br>
-  <input type="text" name="phone" id="phone"><br>
-  Zip Code:<br>
-  <input type="text" name="location" id="location"><br><br>
-</form>
+  <nav>
+    <div class="nav-wrapper blue lighten-1">
+      <a href="#" class="brand-logo">Weather Permitting</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<p>
+<div class="container">
+ <div class="row card margin-Custom">
+      <div class="col s6">
+        <form class="form-styling-custom">
+        Name:<br>
+        <input type="text" name="name" id="name"><br>
+        Phone:<br>
+        <input type="text" name="phone" id="phone"><br>
+        Zip Code:<br>
+        <input type="text" name="location" id="location"><br><br>
+      </form>
+  </div>
+
+<div class="col s6">
+<p class="range-field">
   <label for="hot">Hot: We recommend light clothing (Tank Top, Shorts):</label>
-  <input type="text" id="hot" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  <input class="" type="text" id="hot" readonly style="border:0; color:#f6931f; font-weight:bold;">
 </p>
 <div id="slider-range-hot"></div>
 
@@ -47,58 +68,13 @@
 </p>
 <div id="slider-range-cold"></div>
 
-<button id="submit">Submit</button>
+<!--<button id="submit">Submit</button>-->
+<a class="waves-effect waves-light btn-large blue lighten-1 margin-Custom" id="submit" >Button</a>
+</div>
+</div>
+</div>
+
 <script src="/button.js"></script>
 
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-<div data-role="page">
-  <div data-role="header">
-    <h1>Weather Permitting</h1>
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <form method="post" action="/action_page_post.php">
-      <div data-role="rangeslider">
-        <label for="temp-hot-min">Hot:(Tank Top, Shorts)</label>
-        <input type="range" name="temp-hot-min" id="temp-hot-min" value="85" min="0" max="120">
-        <label for="temp-hot-max">Hot:</label>
-        <input type="range" name="temp-hot-max" id="temp-hot-max" value="98" min="0" max="120">
-      </div>
-        <input type="submit" data-inline="true" value="Submit">
-      <div data-role="rangeslider">
-        <label for="temp-warm-min">Warm: We recommend light clothing (T-Shirt, Shorts)</label>
-        <input type="range" name="temp-warm-min" id="temp-warm-min" value="67" min="0" max="120">
-        <label for="temp-warm-max">Hot:</label>
-        <input type="range" name="temp-warm-max" id="temp-warm-max" value="82" min="0" max="120">
-      </div>
-        <input type="submit" data-inline="true" value="Submit">
-      <div data-role="rangeslider">
-        <label for="temp-cool-min">Cool: We recommend moderate clothing (hoodie, light jacket)</label>
-        <input type="range" name="temp-cool-min" id="temp-cool-min" value="85" min="0" max="120">
-        <label for="temp-cool-max">Hot:</label>
-        <input type="range" name="temp-cool-max" id="temp-cool-max" value="98" min="0" max="120">
-      </div>
-        <input type="submit" data-inline="true" value="Submit">
-      <div data-role="rangeslider">
-        <label for="temp-cold-min">Cold: We recommend heavy clothing (Winter Jacket, Snow Pants)</label>
-        <input type="range" name="temp-cold-min" id="temp-cold-min" value="85" min="0" max="120">
-        <label for="temp-cold-max">Hot:</label>
-        <input type="range" name="temp-cold-max" id="temp-cold-max" value="98" min="0" max="120">
-      </div>
-        <input type="submit" data-inline="true" value="Submit">
-     </form>
-  </div>
-</div> 
-
-</body>
-</html>
- -->
