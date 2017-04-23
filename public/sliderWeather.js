@@ -8,7 +8,7 @@ $( function() {
       $( "#hot" ).val(ui.values[ 0 ] + " degrees - " + ui.values[ 1 ] + " degrees");
     }
   });
-  $( "#hot" ).val($( "#slider-range-hot" ).slider( "values", 0 ) + " - " + $( "#slider-range-hot" ).slider( "values", 1 ) );
+  $( "#hot" ).val($( "#slider-range-hot" ).slider( "values", 0 ) +  " degrees - " + $( "#slider-range-hot" ).slider( "values", 1 ) +  " degrees" );
   });
 
 $( function() {
@@ -21,7 +21,7 @@ $( function() {
       $( "#warm" ).val(ui.values[ 0 ] + " degrees - " + ui.values[ 1 ] + " degrees");
     }
   });
-  $( "#warm" ).val($( "#slider-range-warm" ).slider( "values", 0 ) + " - " + $( "#slider-range-warm" ).slider( "values", 1 ) );
+  $( "#warm" ).val($( "#slider-range-warm" ).slider( "values", 0 ) + " degrees - " + $( "#slider-range-warm" ).slider( "values", 1 ) + " degrees" );
   });
 
 $( function() {
@@ -34,7 +34,7 @@ $( function() {
       $( "#cool" ).val(ui.values[ 0 ] + " degrees - " + ui.values[ 1 ] + " degrees");
     }
   });
-  $( "#cool" ).val($( "#slider-range-cool" ).slider( "values", 0 ) + " - " + $( "#slider-range-cool" ).slider( "values", 1 ) );
+  $( "#cool" ).val($( "#slider-range-cool" ).slider( "values", 0 ) + " degrees - " + $( "#slider-range-cool" ).slider( "values", 1 ) + " degrees" );
   });
 
 $( function() {
@@ -47,5 +47,5 @@ $( function() {
       $( "#cold" ).val(ui.values[ 0 ] + " degrees - " + ui.values[ 1 ] + " degrees");
     }
   });
-  $( "#cold" ).val($( "#slider-range-cold" ).slider( "values", 0 ) + " - " + $( "#slider-range-cold" ).slider( "values", 1 ) );
+  $( "#cold" ).val($( "#slider-range-cold" ).slider( "values", 0 ) + " degrees - " + $( "#slider-range-cold" ).slider( "values", 1 ) + "degrees"  );
   });
