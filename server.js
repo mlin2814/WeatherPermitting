@@ -11,8 +11,8 @@ var test = null;
 
 
 // Twilio Account
-var accountSid = 'AC023f30be60ca8348503d270f8e18f49a'; // Your Account SID from www.twilio.com/console
-var authToken = '3cc1ce0e4a0acbb28812581b2be10a98';   // Your Auth Token from www.twilio.com/console
+var accountSid = ''; // Your Account SID from www.twilio.com/console
+var authToken = '';   // Your Auth Token from www.twilio.com/console
 
 
 
@@ -85,8 +85,6 @@ app.post('/add', function(req, res){
     hotMin: hotMin,
     hotMax: hotMax
   };
-  console.log(newUser);
-  console.log(coldMax);
 
   // Using the User model, create a new MongoDB entry
   var entry = new User (newUser);
@@ -95,8 +93,7 @@ app.post('/add', function(req, res){
   entry.save(function(err, doc) {
     // log any errors
     if (err) {
-    res.sendStatus(403);
-    console.log(err);
+    res.sendStatus(403);    
     } 
     // or log the doc that was saved to the DB
     else {
@@ -124,6 +121,7 @@ app.listen(port, function(){
 // ---------------------------------------------------------------------------------------------------------------
 var rule = new schedule.RecurrenceRule();
 rule.minute = 15; // <-- for testing (every hour instead)
+// rule.minute = 0; // <-- for testing (every hour instead)
 // rule.hour = 7; // <-- actually 7am 
 var j = schedule.scheduleJob(rule, function(){
 
@@ -185,7 +183,7 @@ var j = schedule.scheduleJob(rule, function(){
         client.messages.create({
             body: totalMessage,
             to: "+1" + temp.phoneNumber,  // Text this number
-            from: '+17325322089' // From a valid Twilio number
+            from: '' // From a valid Twilio number
         }, function(err, message) {
             if (err) {
               console.log(err);
