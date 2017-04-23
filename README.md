@@ -9,7 +9,7 @@ This is a full web application built on node.js, it allows users to sign up and 
 
 
 ## Homepage
-![HomePage](screenshots/main.jpg)
+![HomePage](screenshots/homepage.jpg)
 
 ## Functionality
 The app is built on the `NodeJs` environment. It uses several apis including the `twilio` and `weather-api`. The database we used was `mongoDB` and for the styling we used `materialize-css`.
